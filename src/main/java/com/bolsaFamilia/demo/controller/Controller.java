@@ -33,10 +33,12 @@ public class Controller {
 	public String buscarInformacoes(Model model, @RequestParam("anoMes") String anoMes, @RequestParam("codigoIbge") String codigoIbge) {		
 		
 		RestTemplate rt = new RestTemplate();
-		anoMes = anoMes.replace("/", "");
+		String[] argumentos = anoMes.split("/");
+		
+		
 		
 		url = "http://www.transparencia.gov.br/api-de-dados/bolsa-familia-por-municipio?" +
-		"mesAno=" + anoMes + "&" + "codigoIbge=" + codigoIbge + "&" + "pagina1";
+		"mesAno=" + argumentos[1] + argumentos[0] + "&" + "codigoIbge=" + codigoIbge + "&" + "pagina1";
 		
 		ResponseEntity<List<InfoMunicipio>> response = rt.exchange(url,
 				HttpMethod.GET,
