@@ -33,6 +33,7 @@ public class Controller {
 	public String buscarInformacoes(Model model, @RequestParam("anoMes") String anoMes, @RequestParam("codigoIbge") String codigoIbge) {		
 		
 		RestTemplate rt = new RestTemplate();
+		anoMes = anoMes.replace("/", "");
 		
 		url = "http://www.transparencia.gov.br/api-de-dados/bolsa-familia-por-municipio?" +
 		"mesAno=" + anoMes + "&" + "codigoIbge=" + codigoIbge + "&" + "pagina1";
