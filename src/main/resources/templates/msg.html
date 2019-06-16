@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Salário Familia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div th:if="${salvo}" class="alert alert-success mt-5" role="alert">
+  			<h4 class="alert-heading">Consulta Salva!</h4>
+  			<p>Esta consulta já pode ser consultada no banco de dados!</p>
+  			<hr>
+			<button class="btn btn-outline-info"><a class="nav-link" href="/">Consultas Salvas</a></button>
+		</div>
+		<div th:unless="${salvo}" class="alert alert-danger mt-5" role="alert">
+  			<h4 class="alert-heading">Erro!</h4>
+  			<p>Já existe esta consulta no banco de dados!</p>
+  			<hr>
+			<button class="btn btn-outline-info"><a class="nav-link" href="/">Consultas Salvas</a></button>
+		</div>
+	</div>
+</body>
+</html>

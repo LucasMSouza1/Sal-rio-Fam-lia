@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Salário Familia</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<h2 class="h2 mt-3 mb-3 text-center">Pagamento do bolsa familia por municipio</h2>	
+	<div class="d-flex justify-content-center mt-5">
+		  <div class="container">
+		    <table class="table">
+				<thead class="thead-dark">
+					<tr>
+						<th>Código Ibge</th>
+						<th>Cidade</th>
+						<th>Data Referencia</th>
+						<th>Quantidade de beneficiarios</th>
+						<th>Valor Total</th>
+						<th>Ação</th>
+					</tr>
+				</thead>
+				<tr th:each="informacao: ${informacoesMunicipio}">
+					<td th:text="${informacao.municipio.codigoIBGE}">Código Ibge:</td>
+					<td th:text="${informacao.municipio.nomeIBGE}">Cidade:</td>
+					<td th:text="${informacao.dataReferencia}">Data Referencia:</td>	
+					<td th:text="${informacao.quantidadeBeneficiados}">quantidadeBeneficiados:</td>
+					<td th:text="${#numbers.formatDecimal(informacao.valor, 0, 'COMMA', 2, 'POINT')}">Valor:</td>		
+					<td><a th:href="@{'/create/' + ${informacao.municipio.codigoIBGE}}" class="badge badge-success">Salvar</a></td>
+				</tr>
+			</table>
+			<button class="btn btn-outline-info"><a class="nav-link" href="/">Consultas Salvas</a></button>
+		  </div>
+	</div>
+	
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
