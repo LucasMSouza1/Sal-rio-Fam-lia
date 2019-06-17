@@ -15,7 +15,7 @@
 		<h2 class="h2 mt-3 mb-3 text-center font-weight-light">Resultado da busca:</h2>	
 		<div class="d-flex justify-content-center flex-column mt-3">
 			  	<div class="card border-secondary mb-3 m-2" style="max-width: 18rem;"
-					th:each="informacao: ${informacoesMunicipio}">
+					th:each="informacao: ${informacoesMunicipio}" th:if="${informacao.dataReferencia}">
 					<div class="card-header"></div>
 					<div class="card-body text-secondary">
 						<h5 th:text="${informacao.municipio.nomeIBGE}" class="card-title"></h5>
@@ -34,6 +34,13 @@
 						</p>
 					</div>
 				</div>
+				<div class="mt-5 d-flex justify-content-center">
+					<div th:unless="${informacao.dataReferencia}" class="alert alert-danger mt-5" role="alert">
+			  			<h4 class="alert-heading">Não encontrado!</h4>
+			  			<p>Verifique os campos digitados ou não foram encontrados os dados para este período na base de dados do governo. Busque por outra data!</p>
+			  			<hr>
+					</div>
+				</div>				
 				<button class="btn btn-outline-info text-center"><a class="nav-link" href="/">Consultas Salvas</a></button>
 			</div>
 	</div>

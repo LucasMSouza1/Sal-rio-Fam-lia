@@ -34,9 +34,7 @@ public class Controller {
 		
 		RestTemplate rt = new RestTemplate();
 		String[] argumentos = anoMes.split("/");
-		
-		
-		
+				
 		url = "http://www.transparencia.gov.br/api-de-dados/bolsa-familia-por-municipio?" +
 		"mesAno=" + argumentos[1] + argumentos[0] + "&" + "codigoIbge=" + codigoIbge + "&" + "pagina1";
 		
