@@ -19,7 +19,7 @@
 				<input class="form-control mr-sm-2 text-left m-2" name="codigoIbge"
 					type="search" placeholder="Código da cidade" aria-label="Search" required="true">
 				<input class="form-control mr-sm-2 text-left m-2" name="anoMes"
-					type="search" placeholder="mês e ano (mm/yyyy)" aria-label="Search" required="true">
+					type="search" placeholder="mês e ano (mm/yyyy)" id="dataPesquisa" aria-label="Search" required="true">
 				<div class="d-flex justify-content-center m-2">
 					<button class="btn btn-outline-primary my-2 my-sm-0"
 						type="submit" style="color: white;">Buscar</button>
@@ -71,5 +71,13 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+	    <script language="javascript">
+	     $(document).ready(function () {
+	        $('#dataPesquisa').mask('99/9999');
+	        return false;
+	    });
+	    </script>
 </body>
 </html>
