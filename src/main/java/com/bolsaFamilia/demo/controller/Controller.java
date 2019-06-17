@@ -34,6 +34,7 @@ public class Controller {
 		
 		RestTemplate rt = new RestTemplate();
 		String[] argumentos = anoMes.split("/");
+		boolean encontrado = false;
 				
 		url = "http://www.transparencia.gov.br/api-de-dados/bolsa-familia-por-municipio?" +
 		"mesAno=" + argumentos[1] + argumentos[0] + "&" + "codigoIbge=" + codigoIbge + "&" + "pagina1";
@@ -46,8 +47,12 @@ public class Controller {
 	
 		informacoesMunicipiosApi = response.getBody();
 		
-		model.addAttribute("informacoesMunicipio", informacoesMunicipiosApi);
+		if(informacoesMunicipiosApi.size() != 0) {
+			encontrado = true;
+		}
 		
+		model.addAttribute("informacoesMunicipio", informacoesMunicipiosApi);
+		model.addAttribute("encontrado", encontrado);
 		return "consulta";
 				
 	}
