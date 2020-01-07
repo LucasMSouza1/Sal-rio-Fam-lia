@@ -4,9 +4,9 @@ Este projeto foi desenvolvido para a disciplina de desenvolvimento de sistemas d
 ![](https://github.com/LucasMSouza1/Salario-Familia/blob/master/tela%20de%20listagem.PNG)
 
 ### Tecnologias utilizadas
-Java
-Spring Boot
-Hybernate
+Java,
+,Spring Boot
+,Hybernate
 JPA
 
 ### Como utilizar? 
