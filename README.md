@@ -13,4 +13,4 @@ Acessando o link: https://salariofamilia.herokuapp.com/ é possível ter acesso 
 Para desenvolvimento desta aplicação foi utilizada a api do governo http://www.transparencia.gov.br/swagger-ui.html.
 
 ### Como funciona? 
-Para utilziar é preciso informar o código do IBGE de qualquer munícipio brasileiro e a competência (Mês/Ano) de pagamento do benefício. Com isso a aplicação trará um resumo com as informações do pagamento do salário família para o municipio consultado de acordo com o mês da pesquisa.
+Para utilizar é preciso informar o código do IBGE de qualquer munícipio brasileiro e a competência (Mês/Ano) de pagamento do benefício. Com isso a aplicação trará um resumo com as informações do pagamento do salário família para o municipio consultado de acordo com o mês da pesquisa.
