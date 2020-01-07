@@ -29,6 +29,17 @@ public class Controller {
 	private List<Consulta> consultasBanco = new ArrayList<>();
 	private String url;
 	
+	
+	@GetMapping("/")
+	public String buscarConsultas(Model model) {
+		consultasBanco = consultaRepo.findAll();
+		
+		model.addAttribute("informacoesMunicipio", consultasBanco);
+				
+		return "consultas-banco";
+	}
+	
+	
 	@PostMapping("/buscarInformacoes")
 	public String buscarInformacoes(Model model, @RequestParam("anoMes") String anoMes, @RequestParam("codigoIbge") String codigoIbge) {		
 		
@@ -60,7 +71,6 @@ public class Controller {
 	@GetMapping("/create/{codigoIbge}")
 	public String salvarConsulta(@PathVariable("codigoIbge") String codigoIbge, Model model) {
 		
-		consultasBanco = new ArrayList<Consulta>();
 		consultasBanco = consultaRepo.findAll();
 		List<Consulta> consultasDoMunicipio = new ArrayList<Consulta>();
 		String paginaRetorno = "msg";
@@ -102,16 +112,6 @@ public class Controller {
 		model.addAttribute("salvo", salvo);
 		
 		return paginaRetorno;
-	}
-	
-	
-	@GetMapping("/")
-	public String buscarConsultas(Model model) {
-		consultasBanco = consultaRepo.findAll();
-		
-		model.addAttribute("informacoesMunicipio", consultasBanco);
-				
-		return "consultas-banco";
 	}
 	
 	
